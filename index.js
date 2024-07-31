@@ -140,3 +140,26 @@ public class MultiplyBy50AndAdd6 {
 
 
 
+//EXERCISE 3 
+
+// Define the promise-based function
+function checkStringLength(str) {
+    return new Promise((resolve, reject) => {
+        if (typeof str !== 'string') {
+            // Reject the promise if the input is not a string
+            return reject(new Error('Input must be a string'));
+        }
+
+        // Check the length of the string
+        if (str.length > 10) {
+            resolve('Big word');
+        } else {
+            resolve('Small Number');
+        }
+    });
+}
+
+// Example usage of the function
+checkStringLength('HelloWorld!')
+    .then(result => console.log(result)) // Logs 'Big word'
+    .catch(error => console.error(error)); // Handles any errors
